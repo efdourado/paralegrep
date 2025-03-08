@@ -68,7 +68,7 @@ void upd_ranking(const char *filename, int count) {
 int count_word_occ(const char *filename, const char *word) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
-        perror("Erro ao abrir arq");
+        perror("erro ao abrir arq");
         return 0;
     }
 
@@ -122,7 +122,7 @@ void monitor_dir(const char *word) {
 
     DIR *dir = opendir(FILESET_DIR);
     if (dir == NULL) {
-        perror("Erro ao abrir diretório");
+        perror("erro ao abrir diretório");
         return;
     }
 
@@ -133,7 +133,7 @@ void monitor_dir(const char *word) {
             snprintf(filepath, sizeof(filepath), "%s/%s", FILESET_DIR, entry->d_name);
 
             if (stat(filepath, &file_stat) == -1) {
-                perror("Erro ao obter informações do arq");
+                perror("erro ao obter info. do arq");
                 continue;
             }
 
